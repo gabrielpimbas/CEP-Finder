@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEP Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CEP Finder</h1>
+      <p>Consulte seu CEP sem dificuldade!</p>
+    </header>
+    <main>
+      <h2>Consultar de Endereço</h2>
+      <form id="formConsulta">
+        <label for="cep">Digite o CEP:</label>
+        <input
+          id="cep"
+          type="text"
+          inputmode="numeric"
+          maxlength="9"
+          placeholder="Ex: 01001-000"
+          required
+        />
+        <label for="cidade">Digite a cidade:</label>
+        <input id="cidade" type="text" placeholder="Ex: São Paulo" required />
+        <button type="submit">Consultar Endereço</button>
+      </form>
+      <p id="mensagem" role="status" aria-live="polite"></p>
+      <footer>
+        <p>&copy; 2026 - CEP Finder. Feito por Gabriel Correa.</p>
+      </footer>
+      <script src="index.js"></script>
+    </main>
+  </body>
+</html>
