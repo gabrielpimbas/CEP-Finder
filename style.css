@@ -1,9 +1,13 @@
+/* importa a fonte Montserrat */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;&display=swap");
 
+/* remove espaçamento padrão */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  /* estilo do corpo da página */
 }
 body {
   min-height: 100vh;
@@ -13,6 +17,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* estilo do cabeçalho da página*/
 header {
   height: 89px;
   background-color: #6d28d9;
@@ -22,17 +28,23 @@ header {
   align-items: center;
   justify-content: center;
 }
+
+/* estilo dos títulos do cabeçalho */
 header h1 {
   color: #d9ccff;
   font-size: 40px;
   font-weight: 400;
   line-height: 42px;
 }
+
+/* estilo dos parágrafos do cabeçalho */
 header p {
   color: #d9ccff;
   font-size: 27px;
   font-weight: 400;
 }
+
+/* estilo do conteúdo principal da página */
 main {
   flex: 1;
   display: flex;
@@ -40,6 +52,8 @@ main {
   align-items: center;
   padding-top: 55px;
 }
+
+/* estilo do formulário da página */
 form {
   width: 456px;
   height: 250px;
@@ -51,14 +65,20 @@ form {
   flex-direction: column;
   position: relative;
 }
+
+/* estilo dos rótulos do formulário */
 form label {
   color: #d2c4ff;
   font-size: 23px;
   font-weight: 400;
 }
+
+/* espaço antes do segundo campo */
 form label[for="cidade"] {
   margin-top: 38px;
 }
+
+/* estilo dos campos de entrada do formulário */
 form input {
   width: 294px;
   height: 33px;
@@ -71,13 +91,19 @@ form input {
   font-size: 20px;
   outline: none;
 }
+
+/* estilo do placeholder dos campos de entrada */
 form input::placeholder {
   color: #b487f5;
   opacity: 1;
 }
+
+/* estilo do campo de entrada quando focado */
 form input:focus {
   outline: 2px solid #a970ff;
 }
+
+/* estilo do botão do formulário */
 form button {
   width: 233px;
   height: 45px;
@@ -93,16 +119,22 @@ form button {
   font-size: 20px;
   cursor: pointer;
 }
+
+/* estilo do botão quando passa o mouse por cima */
 form button:hover {
   background-color: #6d28d9;
   color: white;
 }
+
+/* estilo da mensagem */
 #mensagem {
   margin-top: 130px;
   font-size: 18px;
   color: #d2c4ff;
   text-align: center;
 }
+
+/* estilo do rodpé da página */
 footer {
   width: 100%;
   height: 69px;
@@ -118,6 +150,108 @@ footer {
   justify-content: center;
   margin-top: auto;
 }
+/* página de resultado */
+body:has(#resultado) main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 40px;
+}
+
+/* título */
+body:has(#resultado) main > h1 {
+  color: #ddd1ff;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+/* caixa dos resultados */
+#resultado {
+  width: 82%;
+  max-width: 660px;
+  border: 3px solid #a970ff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* linhas dos resultados */
+#resultado p {
+  min-height: 30px;
+  padding: 3px 10px;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+}
+
+/* linhas roxas */
+#resultado p:nth-child(odd) {
+  background-color: #ad7cf0;
+  color: #242229;
+}
+
+/* linhas escuras */
+#resultado p:nth-child(even) {
+  background-color: #262631;
+  color: #f5f3ff;
+}
+
+/* nome dos dados */
+#resultado strong {
+  color: #f5f3ff;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+/* botão do Google Maps */
+#linkMaps {
+  margin-top: 20px;
+  padding: 7px 20px;
+  background-color: #262631;
+  border: 3px solid #a970ff;
+  border-radius: 5px;
+  color: #f5f3ff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* hover do Maps */
+#linkMaps:hover {
+  background-color: #6d28d9;
+}
+
+/* posição da nova consulta */
+#linkMaps + p {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+}
+
+/* botão nova consulta */
+#linkMaps + p a {
+  display: block;
+  padding: 6px 18px;
+  background-color: #262631;
+  border: 3px solid #a970ff;
+  border-radius: 5px;
+  color: #d2c4ff;
+  font-size: 12px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* hover nova consulta */
+#linkMaps + p a:hover {
+  background-color: #6d28d9;
+  color: white;
+}
+
+/* para deixar responsivo em celulares */
 @media (max-width: 550px) {
   header h1 {
     font-size: 32px;
@@ -136,5 +270,21 @@ footer {
   footer {
     font-size: 17px;
     text-align: center;
+  }
+  body:has(#resultado) main {
+    padding-top: 75px;
+  }
+  #linkMaps + p {
+    top: 15px;
+    right: 15px;
+  }
+  #resultado {
+    width: 92%;
+  }
+  #resultado p {
+    font-size: 16px;
+  }
+  #linkMaps {
+    font-size: 17px;
   }
 }
