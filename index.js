@@ -22,3 +22,6 @@ form.addEventListener("submit", (event) => {
   const parametros = new URLSearchParams({ cep, cidade });
   window.location.href = `resultado.html?${parametros}`;
 });
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}

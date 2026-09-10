@@ -124,3 +124,6 @@ async function consultarEndereco() {
 }
 
 consultarEndereco();
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}
